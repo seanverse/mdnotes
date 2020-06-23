@@ -31,16 +31,16 @@ var app = new Vue({
 - 3、**条件与循环** v-if, v-for等
  
  ```html
-<div id="app-3">
-  <p v-if="seen">现在你看到我了</p>
-</div>
-<div id="app-4">
-  <ol>
-    <li v-for="todo in todos">
-      {{ todo.text }}
-    </li>
-  </ol>
-</div>
+  <div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+  </div>
+  <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+  </div>
  ``` 
 
 - 4、**处理用户事件**-v-on 指令添加一个事件监听器
@@ -143,7 +143,7 @@ var app7 = new Vue({
     ```
 
    + Attribute v-bind指令
- + 
+  
     ```html
       <div v-bind:id="dynamicId"></div>
       <!--布尔 attribut 语法特殊 -->
@@ -153,8 +153,7 @@ var app7 = new Vue({
     + 使用 JavaScript 表达式。
       对所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含单个表达式。
     
-    ```html
-   
+    ```js   
       {{ number + 1 }}
       {{ ok ? 'YES' : 'NO' }}
       {{ message.split('').reverse().join('') }}
@@ -165,7 +164,6 @@ var app7 = new Vue({
       {{ var a = 1 }}
       <!-- 流控制也不会生效，请使用三元表达式 -->
       {{ if (ok) { return message } }}   
-
     ```
 
 + 2、指令
@@ -193,32 +191,32 @@ var app7 = new Vue({
     <!-- 在这个示例中，当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus。-->   
    ```
 
-   **动态参数的值要注意大小写问题，要求是小写或者存一个大写的property**
+    **动态参数的值要注意大小写问题，要求是小写或者存一个大写的property**
 
    + 修饰符 (modifier)
  
-    是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
+  modifier是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
     
-    ```html
-       <form v-on:submit.prevent="onSubmit">...</form>
-    ```
+  ```html
+    <form v-on:submit.prevent="onSubmit">...</form>
+  ```
 
    + v-指令缩写 v-bind : 和v-on的缩写 @
    
-    ```html
-      <!-- 完整语法 -->
-      <a v-bind:href="url">...</a>
-      <!-- 缩写 -->
-      <a :href="url">...</a>
-      <!-- 动态参数的缩写 (2.6.0+) -->
-      <a :[key]="url"> ... </a>
-      <!-- 完整语法 -->
-      <a v-on:click="doSomething">...</a>
-      <!-- 缩写 -->
-      <a @click="doSomething">...</a>
-      <!-- 动态参数的缩写 (2.6.0+) -->
-      <a @[event]="doSomething"> ... </a>
-    ```
+  ```html
+    <!-- 完整语法 -->
+    <a v-bind:href="url">...</a>
+    <!-- 缩写 -->
+    <a :href="url">...</a>
+    <!-- 动态参数的缩写 (2.6.0+) -->
+    <a :[key]="url"> ... </a>
+    <!-- 完整语法 -->
+    <a v-on:click="doSomething">...</a>
+    <!-- 缩写 -->
+    <a @click="doSomething">...</a>
+    <!-- 动态参数的缩写 (2.6.0+) -->
+    <a @[event]="doSomething"> ... </a>
+  ```
 
 ### 计算属性和侦听器
 
