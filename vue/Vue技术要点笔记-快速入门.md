@@ -137,7 +137,7 @@ var app7 = new Vue({
       <!-- 这是语句，不是表达式 -->
       {{ var a = 1 }}
       <!-- 流控制也不会生效，请使用三元表达式 -->
-      {{ if (ok) { return message } }}
+      <!--{{ if (ok) { return message } }}-->
     ```
 + 2、指令
 >指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。
