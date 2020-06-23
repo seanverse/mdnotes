@@ -126,16 +126,18 @@ var app7 = new Vue({
     <button v-bind:disabled="isButtonDisabled">Button</button>
     ```
     + 使用 JavaScript 表达式。对所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含单个表达式。
-    ```html
-    {{ number + 1 }}
-    {{ ok ? 'YES' : 'NO' }}
-    {{ message.split('').reverse().join('') }}
-    <div v-bind:id="'list-' + id"></div>
-    <!--以下是错误的用法示例-->
-    <!-- 这是语句，不是表达式 -->
-    {{ var a = 1 }}
-    <!-- 流控制也不会生效，请使用三元表达式 -->
-    {{ if (ok) { return message } }}
+    
+    ```vue
+      {{ number + 1 }}
+      {{ ok ? 'YES' : 'NO' }}
+      {{ message.split('').reverse().join('') }}
+      <div v-bind:id="'list-' + id"></div>
+    
+      <!--以下是错误的用法示例-->
+      <!-- 这是语句，不是表达式 -->
+      {{ var a = 1 }}
+      <!-- 流控制也不会生效，请使用三元表达式 -->
+      {{ if (ok) { return message } }}
     ```
 + 2、指令
 >指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。
