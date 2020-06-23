@@ -153,7 +153,7 @@ var app7 = new Vue({
     + 使用 JavaScript 表达式。
       对所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含单个表达式。
     
-    ```js   
+    ```raw  
       {{ number + 1 }}
       {{ ok ? 'YES' : 'NO' }}
       {{ message.split('').reverse().join('') }}
