@@ -1,11 +1,15 @@
 ## Vue 技术要点笔记
 
 ### 基础入门
-- 1、**声明式渲染**-插值 {{}}
-```javascript
+- 1、**声明式渲染**-插值 
+
+```html
 <div id="app">
   {{ message }}
 </div>
+```
+
+```js
 var app = new Vue({
   el: '#app',
   data: {
@@ -15,7 +19,8 @@ var app = new Vue({
 ```
 
 - 2、**声明式渲染**-指令。v-bind attribute 被称为指令。指令带有前缀 v-,以表示Vue提供的特殊Attribute。
-```javascript
+
+```html
 <div id="app-2">
   <span v-bind:title="message">
     鼠标悬停几秒钟查看此处动态绑定的提示信息！
@@ -24,7 +29,8 @@ var app = new Vue({
 ```
 
 - 3、**条件与循环** v-if, v-for等
- ```javascript
+ 
+ ```html
 <div id="app-3">
   <p v-if="seen">现在你看到我了</p>
 </div>
@@ -36,12 +42,17 @@ var app = new Vue({
   </ol>
 </div>
  ``` 
+
 - 4、**处理用户事件**-v-on 指令添加一个事件监听器
-```javascript
+  
+```html
 <div id="app-5">
   <p>{{ message }}</p>
   <button v-on:click="reverseMessage">反转消息</button>
 </div>
+```
+
+```js
 var app5 = new Vue({
   el: '#app-5',
   data: {
@@ -54,12 +65,17 @@ var app5 = new Vue({
   }
 })
 ```
+
 - 5、v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定。
-```javascript
+  
+```html
 <div id="app-6">
   <p>{{ message }}</p>
   <input v-model="message">
 </div>
+```
+
+```js
 var app6 = new Vue({
   el: '#app-6',
   data: {
@@ -67,10 +83,13 @@ var app6 = new Vue({
   }
 })
 ```
+
 ### 组件化
 
 - 1、定义组件：在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。
-```javascript
+  
+```js
+
 // 定义名为 todo-item 的新组件
 Vue.component('todo-item', {
   props: ['todo'],
@@ -102,12 +121,15 @@ var app7 = new Vue({
     ]
   }
 })
+
 ```
 
 ### Vue实例的生命周期图示和生命周期钩子
+
  [生命周期图示](https://cn.vuejs.org/images/lifecycle.png)
 
 ### 模板语法
+
 + 1、插值
    + 文本  `<span>Message: {{ msg }}</span>`    
     通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。
