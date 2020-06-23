@@ -153,8 +153,8 @@ var app7 = new Vue({
     + 使用 JavaScript 表达式。
       对所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含单个表达式。
     
-    ```hml
-
+    ```html
+    {% raw %}
       {{ number + 1 }}
       {{ ok ? 'YES' : 'NO' }}
       {{ message.split('').reverse().join('') }}
@@ -164,18 +164,20 @@ var app7 = new Vue({
       <!-- 这是语句，不是表达式 -->
       {{ var a = 1 }}
       <!-- 流控制也不会生效，请使用三元表达式 -->
-      <!-- if (ok) { return message } -->
-    
+      {{ if (ok) { return message } }}
+    {% endraw %}
+
     ```
+
 + 2、指令
   
->指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。
+> 指令 (Directives) 是带有 v- 前缀的特殊 attribute。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。
   
    + 参数。一些指令能够接收一个“参数”，在指令名称之后以冒号表示。
 
    ```html
-   <a v-bind:href="url">...</a>
-   <!--在这里 href 是参数，告知 v-bind 指令将该元素的 href attribute 与表达式 url 的值绑定。-->
+    <a v-bind:href="url">...</a>
+    <!--在这里 href 是参数，告知 v-bind 指令将该元素的 href attribute 与表达式 url 的值绑定。-->
    ```
 
    + 动态参数
@@ -183,12 +185,12 @@ var app7 = new Vue({
    从 2.6.0 开始,可以用方括号括起来的 JavaScript 表达式作为一个指令的参数： 
    
    ```html
-   <a v-bind:[attributeName]="url"> ... </a>
-   <!--这里的 attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 data property attributeName，其值为 "href"，那么这个绑定将等价于 v-bind:href。 -->
-   
-   <!-- 你可以使用动态参数为一个动态的事件名绑定处理函数： -->
-   <a v-on:[eventName]="doSomething"> ... </a>
-   <!-- 在这个示例中，当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus。-->   
+    <a v-bind:[attributeName]="url"> ... </a>
+    <!--这里的 attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 data property attributeName，其值为 "href"，那么这个绑定将等价于 v-bind:href。 -->
+    
+    <!-- 你可以使用动态参数为一个动态的事件名绑定处理函数： -->
+    <a v-on:[eventName]="doSomething"> ... </a>
+    <!-- 在这个示例中，当 eventName 的值为 "focus" 时，v-on:[eventName] 将等价于 v-on:focus。-->   
    ```
 
    **动态参数的值要注意大小写问题，要求是小写或者存一个大写的property**
@@ -665,6 +667,7 @@ div v-if="type === 'A'">
 使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。
 
 - 4、按键修饰符
+- 
   ```html
       <!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` -->
       <input v-on:keyup.enter="submit">
@@ -699,6 +702,7 @@ div v-if="type === 'A'">
     <!-- Ctrl + Click -->
     <div v-on:click.ctrl="doSomething">Do something</div>
   ```
+
   **exact 修饰符允许你控制由精确的系统修饰符组合触发的事件。**
 
   ```html
