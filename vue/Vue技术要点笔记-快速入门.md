@@ -282,7 +282,7 @@ var app7 = new Vue({
     ```
     但是watch属性并进行更新，相比computed的代码更多更杂。
 
-    - 计算属性的setter
+    计算属性的setter：
     
     ```js
 
@@ -497,11 +497,11 @@ var app7 = new Vue({
 
 - 2、v-show
     
-```html
-  <h1 v-show="ok">Hello!</h1>
-```
+  ```html
+    <h1 v-show="ok">Hello!</h1>
+  ```
 
-与v-if不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS property display。 v-show 不支持 <template> 元素，也不支持 v-else。
+  与v-if不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS property display。 v-show 不支持 <template> 元素，也不支持 v-else。
 
 
 ### 列表渲染v-for
@@ -628,7 +628,7 @@ var app7 = new Vue({
         event.preventDefault()
         }
         alert(message)
-    }
+      }
     }
   ```
 
