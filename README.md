@@ -3,6 +3,9 @@
 You can use the [editor on GitHub](https://github.com/Seanxq/mdnotes/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Vue
+[Vue技术要点笔记-快速入门](vue/Vue技术要点笔记-快速入门.md)
+[Vue技术要点笔记-组件](vue/Vue技术要点笔记-组件.md)
 
 ### Markdown
 
