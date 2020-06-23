@@ -153,17 +153,21 @@ var app7 = new Vue({
     + 使用 JavaScript 表达式。
       对所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。有个限制就是，每个绑定都只能包含单个表达式。
     
-    ```raw  
-      {{ number + 1 }}
-      {{ ok ? 'YES' : 'NO' }}
-      {{ message.split('').reverse().join('') }}
+    ```html 
+      { { number + 1 } }
+
+      { { ok ? 'YES' : 'NO' } }
+
+      { { message.split('').reverse().join('') } }
+
       <div v-bind:id="'list-' + id"></div>
     
       <!--以下是错误的用法示例-->
       <!-- 这是语句，不是表达式 -->
-      {{ var a = 1 }}
+      { { var a = 1 } }
+
       <!-- 流控制也不会生效，请使用三元表达式 -->
-      {{ if (ok) { return message } }}   
+      { { if (ok) { return message } } }    
     ```
 
 + 2、指令
@@ -752,7 +756,7 @@ var app7 = new Vue({
 
 ```
 
-  **值绑定**
+- 2、值绑定
 
 ```html
     <!-- 当选中时，`picked` 为字符串 "a" -->
@@ -782,10 +786,11 @@ var app7 = new Vue({
     vm.selected.number // => 123
 ```
 
-- 2、修饰符
+- 3、修饰符
 
   - .lazy
-     model 在每次 input 事件触发后将输入框的值与数据进行同步。你可以添加 lazy 修饰符，从而转为在 change 事件_之后_进行同步。
+    
+    model 在每次 input 事件触发后将输入框的值与数据进行同步。你可以添加 lazy 修饰符，从而转为在 change 事件_之后_进行同步。
      
      ```html
         <!-- 在“change”时而非“input”时更新 -->
@@ -797,6 +802,7 @@ var app7 = new Vue({
       <input v-model.number="age" type="number"> 
      ```
      将用户的输入值转为数值类型，如果这个值无法被 parseFloat() 解析，则会返回原始的值。
+
   - .trim
      
      ```html
